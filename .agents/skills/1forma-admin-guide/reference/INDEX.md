@@ -1,0 +1,167 @@
+# admin — оглавление справочника
+
+Источник: [help.1forma.ru](https://help.1forma.ru/).
+Каждый файл — полный текст страницы из поискового индекса документации.
+
+- [Руководство администратора](_guides-md__admin-guide-index.md) — https://help.1forma.ru/_guides-md/admin-guide-index/
+- [Пользователи и группы](domains__users-and-groups__admin.md) — https://help.1forma.ru/domains/users-and-groups/admin/
+- [Паттерны управления пользователями и группами](domains__users-and-groups__academy-patterns.md) — https://help.1forma.ru/domains/users-and-groups/academy-patterns/
+- [Автоматическое создание групп и ограничение видимости пользователей](domains__users-and-groups__groups-visibility-auto-creation.md) — https://help.1forma.ru/domains/users-and-groups/groups-visibility-auto-creation/
+- [FAQ: видимость кнопки «Поставить отсутствие» в профиле](domains__users-and-groups__faq-absence-button-visibility.md) — https://help.1forma.ru/domains/users-and-groups/faq-absence-button-visibility/
+- [Авторизация и вход](domains__auth__admin.md) — https://help.1forma.ru/domains/auth/admin/
+- [Active Directory и SSO — Решение проблем](domains__auth__support-guide-ad-sso.md) — https://help.1forma.ru/domains/auth/support-guide-ad-sso/
+- [Права, роли и пароли — Решение проблем](domains__auth__support-guide-permissions.md) — https://help.1forma.ru/domains/auth/support-guide-permissions/
+- [Нет доступа к форме или ошибка авторизации — Решение проблем](domains__auth__runbook-form-access-auth.md) — https://help.1forma.ru/domains/auth/runbook-form-access-auth/
+- [Синхронизация с Active Directory (AD Sync) — справочник](domains__auth__ad-sync-technical-reference.md) — https://help.1forma.ru/domains/auth/ad-sync-technical-reference/
+- [Права доступа к задачам](domains__permissions__admin.md) — https://help.1forma.ru/domains/permissions/admin/
+- [Паттерны настройки прав](domains__permissions__academy-patterns.md) — https://help.1forma.ru/domains/permissions/academy-patterns/
+- [Перевоплощение](domains__permissions__impersonation.md) — https://help.1forma.ru/domains/permissions/impersonation/
+- [Организационная структура](domains__org-structure__admin.md) — https://help.1forma.ru/domains/org-structure/admin/
+- [Оргструктура — синхронизация](domains__org-structure__sync.md) — https://help.1forma.ru/domains/org-structure/sync/
+- [Категории](domains__categories__admin.md) — https://help.1forma.ru/domains/categories/admin/
+- [Настройки переходов: полный справочник](domains__categories__transition-settings-reference.md) — https://help.1forma.ru/domains/categories/transition-settings-reference/
+- [Системные категории: справочник](domains__categories__system-categories-reference.md) — https://help.1forma.ru/domains/categories/system-categories-reference/
+- [Паттерны настройки категорий](domains__categories__academy-patterns.md) — https://help.1forma.ru/domains/categories/academy-patterns/
+- [Категории — Решение типичных проблем](domains__categories__support-guide.md) — https://help.1forma.ru/domains/categories/support-guide/
+- [Маршрутизация — диагностический чеклист](domains__categories__routing-troubleshooting.md) — https://help.1forma.ru/domains/categories/routing-troubleshooting/
+- [Задачи](domains__tasks__admin.md) — https://help.1forma.ru/domains/tasks/admin/
+- [Маршруты и статусы задач — Решение проблем](domains__tasks__support-guide-routes.md) — https://help.1forma.ru/domains/tasks/support-guide-routes/
+- [Формы задач (MTF/NTF)](domains__task-forms__admin.md) — https://help.1forma.ru/domains/task-forms/admin/
+- [Формы задач (MTF/NTF) — Справочник блоков](domains__task-forms__blocks-reference.md) — https://help.1forma.ru/domains/task-forms/blocks-reference/
+- [Старая и новая карточка задачи](domains__task-forms__mtf-ntf-differences.md) — https://help.1forma.ru/domains/task-forms/mtf-ntf-differences/
+- [Подписи](domains__signatures__admin.md) — https://help.1forma.ru/domains/signatures/admin/
+- [Подписи и согласование — Решение проблем](domains__signatures__support-guide.md) — https://help.1forma.ru/domains/signatures/support-guide/
+- [Дополнительные параметры](domains__ext-params__admin.md) — https://help.1forma.ru/domains/ext-params/admin/
+  - 2. Добавить колонки в settings.extParamTableSettings
+  - 3. POST полный объект настроек
+- [Справочник типов ДП](domains__ext-params__types-reference.md) — https://help.1forma.ru/domains/ext-params/types-reference/
+- [ДП «Файл» — справочник настроек](domains__ext-params__file__settings-reference.md) — https://help.1forma.ru/domains/ext-params/file/settings-reference/
+- [ДП «Ссылка» (Lookup) и «Множественная ссылка» (MultiLookup) — справочник настроек](domains__ext-params__lookup__settings-reference.md) — https://help.1forma.ru/domains/ext-params/lookup/settings-reference/
+- [Групповой выбор в ДП "Выбор нескольких задач из категории" (Multilookup) — SSRM](domains__ext-params__lookup__ssrm-group-selection.md) — https://help.1forma.ru/domains/ext-params/lookup/ssrm-group-selection/
+- [ДП «Выбор пользователя» — справочник настроек](domains__ext-params__select-users__settings-reference.md) — https://help.1forma.ru/domains/ext-params/select-users/settings-reference/
+- [ДП «Таблица» — справочник настроек](domains__ext-params__table__settings-reference.md) — https://help.1forma.ru/domains/ext-params/table/settings-reference/
+- [Доступ к ДП — взаимодействие систем разграничения](domains__ext-params__permissions-model.md) — https://help.1forma.ru/domains/ext-params/permissions-model/
+- [Сквозные ДП](domains__ext-params__through.md) — https://help.1forma.ru/domains/ext-params/through/
+- [Паттерны администрирования ДП](domains__ext-params__academy-patterns.md) — https://help.1forma.ru/domains/ext-params/academy-patterns/
+- [FAQ: миграция видимости ДП с JS-вставок на смарт-фильтры](domains__ext-params__faq-visibility-migration-js-to-smart.md) — https://help.1forma.ru/domains/ext-params/faq-visibility-migration-js-to-smart/
+- [Дополнительные параметры — Решение проблем](domains__ext-params__support-guide.md) — https://help.1forma.ru/domains/ext-params/support-guide/
+- [Смарт-действия — Администрирование](domains__smart-actions__admin.md) — https://help.1forma.ru/domains/smart-actions/admin/
+  - POST /api/admin/smart/scripts/editor
+  - 2. Обновить ТОЛЬКО код — остальные поля НЕ ТРОГАТЬ
+  - 3. POST обратно
+- [Справочник смарт-действий](domains__smart-actions__actions-reference.md) — https://help.1forma.ru/domains/smart-actions/actions-reference/
+- [Паттерны Smart-автоматизации](domains__smart-actions__academy-patterns.md) — https://help.1forma.ru/domains/smart-actions/academy-patterns/
+- [Смарт-действия — Известные проблемы](domains__smart-actions__known-issues.md) — https://help.1forma.ru/domains/smart-actions/known-issues/
+- [FAQ: Lua pcall + SMART:execute_action — какие ошибки перехватываются](domains__smart-actions__faq-lua-pcall-error-handling.md) — https://help.1forma.ru/domains/smart-actions/faq-lua-pcall-error-handling/
+- [FAQ: где в AdminSPA «Отчёт по повторам»](domains__smart-actions__faq-adminspa-recurrence-report.md) — https://help.1forma.ru/domains/smart-actions/faq-adminspa-recurrence-report/
+- [Смарт-действия и скрипты — Решение проблем](domains__smart-actions__support-guide.md) — https://help.1forma.ru/domains/smart-actions/support-guide/
+- [Смарт-пакеты: типичные ошибки и как их избежать](domains__smart-actions__action-package-pitfalls.md) — https://help.1forma.ru/domains/smart-actions/action-package-pitfalls/
+- [Смарт-фильтры — Администрирование](domains__smart-filters__admin.md) — https://help.1forma.ru/domains/smart-filters/admin/
+- [Справочник переменных смарт-действий](domains__smart-actions__variables-reference.md) — https://help.1forma.ru/domains/smart-actions/variables-reference/
+- [Чтение данных из Первой Формы](domains__smart-filters__read-data.md) — https://help.1forma.ru/domains/smart-filters/read-data/
+- [Jint — JS-интерпретатор для смарт-скриптов](domains__smart-actions__js-scripting-jint.md) — https://help.1forma.ru/domains/smart-actions/js-scripting-jint/
+- [JS/Jint SmartScripts — справочник паттернов и граблей](domains__smart-actions__js-jint-patterns.md) — https://help.1forma.ru/domains/smart-actions/js-jint-patterns/
+- [C# (Roslyn) — типизированные смарт-скрипты](domains__smart-actions__csharp-scripting-roslyn.md) — https://help.1forma.ru/domains/smart-actions/csharp-scripting-roslyn/
+- [Lua-скрипты — особенности PG-совместимости](domains__smart-actions__lua-pg-guide.md) — https://help.1forma.ru/domains/smart-actions/lua-pg-guide/
+- [Python — внешний исполнитель для смарт-скриптов](domains__smart-actions__python-scripting.md) — https://help.1forma.ru/domains/smart-actions/python-scripting/
+  - v2 | 2026-03-08 16:45 | Добавлена проверка прав
+- [NLP API в смарт-скриптах (v2.268)](domains__smart-actions__nlp-api.md) — https://help.1forma.ru/domains/smart-actions/nlp-api/
+  - Контроллер отдаёт стандартную обёртку ApiResultDto — результат в data
+- [Уведомления — Администрирование](domains__notifications__admin.md) — https://help.1forma.ru/domains/notifications/admin/
+- [Паттерны настройки уведомлений и индикаторов](domains__notifications__academy-patterns.md) — https://help.1forma.ru/domains/notifications/academy-patterns/
+- [Runbook: пропали/не обновляются тикеры и счётчики](domains__notifications__runbook-tickers-counters.md) — https://help.1forma.ru/domains/notifications/runbook-tickers-counters/
+- [Уведомления и индикаторы — Решение проблем](domains__notifications__support-guide.md) — https://help.1forma.ru/domains/notifications/support-guide/
+- [Комментарии — Администрирование](domains__comments__admin.md) — https://help.1forma.ru/domains/comments/admin/
+  - → {"data": [{"preUploadFileId": 708072}]}
+  - 2. Комментарий с файлом: ключи предзагруженных файлов передаются в теле запроса
+- [Форматирование текста](domains__comments__text-formatting.md) — https://help.1forma.ru/domains/comments/text-formatting/
+- [Опросы в комментариях](domains__comments__polls.md) — https://help.1forma.ru/domains/comments/polls/
+- [Чат, комментарии и вопросы — Решение проблем](domains__comments__support-guide.md) — https://help.1forma.ru/domains/comments/support-guide/
+- [Чаты — Администрирование](domains__chat__admin.md) — https://help.1forma.ru/domains/chat/admin/
+- [Чаты](domains__chat__business.md) — https://help.1forma.ru/domains/chat/business/
+- [Видеоконференции — Администрирование](domains__conferences__admin.md) — https://help.1forma.ru/domains/conferences/admin/
+- [Иерархия настроек ВКС](domains__conferences__settings-hierarchy.md) — https://help.1forma.ru/domains/conferences/settings-hierarchy/
+- [Видеоконференции — Решение проблем](domains__conferences__support-guide.md) — https://help.1forma.ru/domains/conferences/support-guide/
+- [Почта — Администрирование](domains__mail__admin.md) — https://help.1forma.ru/domains/mail/admin/
+- [Почта — Решение проблем](domains__mail__support-guide.md) — https://help.1forma.ru/domains/mail/support-guide/
+- [Файлы — Администрирование](domains__files__admin.md) — https://help.1forma.ru/domains/files/admin/
+- [Файлы](domains__files__business.md) — https://help.1forma.ru/domains/files/business/
+- [Онлайн-просмотр файлов — Решение проблем](domains__files__online-preview-troubleshooting.md) — https://help.1forma.ru/domains/files/online-preview-troubleshooting/
+  - Проверка доступности
+  - Проверка конфигурации через API 1Ф:
+  - Если ONLYOFFICE в Docker:
+- [Файлы и Диск — Решение проблем](domains__files__support-guide.md) — https://help.1forma.ru/domains/files/support-guide/
+- [Диск — Администрирование](domains__disk__admin.md) — https://help.1forma.ru/domains/disk/admin/
+- [Отчёты — Администрирование](domains__reports__admin.md) — https://help.1forma.ru/domains/reports/admin/
+- [Отчёты и печатные формы — паттерны](domains__reports__academy-patterns.md) — https://help.1forma.ru/domains/reports/academy-patterns/
+- [FastReport — Настройка и решение проблем](domains__reports__support-guide-fastreport.md) — https://help.1forma.ru/domains/reports/support-guide-fastreport/
+- [Порталы](domains__portal__admin.md) — https://help.1forma.ru/domains/portal/admin/
+- [Порталы — виджеты](domains__portal__admin-widgets.md) — https://help.1forma.ru/domains/portal/admin-widgets/
+- [Дашборды — паттерны настройки](domains__portal__academy-dashboards.md) — https://help.1forma.ru/domains/portal/academy-dashboards/
+- [Порталы — API Cookbook: создание портала и добавление виджетов](domains__portal__portal-api-cookbook.md) — https://help.1forma.ru/domains/portal/portal-api-cookbook/
+  - Доступные для добавления
+  - Удалить привязку
+  - Список includes портала
+  - Доступные для добавления
+  - Удалить
+  - blockId — query parameter, не body!
+  - Ответ: 204 No Content
+  - includeId — QUERY parameter, не body
+- [Порталы и виджеты — Решение проблем](domains__portal__support-guide.md) — https://help.1forma.ru/domains/portal/support-guide/
+- [Канбан — Администрирование](domains__kanban__admin.md) — https://help.1forma.ru/domains/kanban/admin/
+- [Канбан — Решение проблем](domains__kanban__support-guide.md) — https://help.1forma.ru/domains/kanban/support-guide/
+- [Гриды — Администрирование](domains__grids__admin.md) — https://help.1forma.ru/domains/grids/admin/
+- [Произвольные источники данных](domains__grids__custom-data-sources.md) — https://help.1forma.ru/domains/grids/custom-data-sources/
+- [Гриды — Справочник фильтров](domains__grids__filters-reference.md) — https://help.1forma.ru/domains/grids/filters-reference/
+- [Гриды — Известные проблемы](domains__grids__known-issues.md) — https://help.1forma.ru/domains/grids/known-issues/
+- [Гриды и фильтры — Решение проблем](domains__grids__support-guide.md) — https://help.1forma.ru/domains/grids/support-guide/
+- [Календарь — Администрирование](domains__calendar__admin.md) — https://help.1forma.ru/domains/calendar/admin/
+- [Провайдер Exchange (EWS)](domains__calendar__provider-ews.md) — https://help.1forma.ru/domains/calendar/provider-ews/
+- [Провайдер CalDAV](domains__calendar__provider-caldav.md) — https://help.1forma.ru/domains/calendar/provider-caldav/
+- [Паттерны настройки календаря](domains__calendar__academy-patterns.md) — https://help.1forma.ru/domains/calendar/academy-patterns/
+- [FAQ: CalDav (Яндекс и др.) — HTML-теги в описании событий](domains__calendar__faq-caldav-html-description.md) — https://help.1forma.ru/domains/calendar/faq-caldav-html-description/
+- [Exchange — диагностика синхронизации пользователя](domains__calendar__runbook-exchange-user-sync.md) — https://help.1forma.ru/domains/calendar/runbook-exchange-user-sync/
+- [Календарь и события — Решение проблем](domains__calendar__support-guide.md) — https://help.1forma.ru/domains/calendar/support-guide/
+- [Ресурсы — Администрирование](domains__resources__admin.md) — https://help.1forma.ru/domains/resources/admin/
+- [Ресурсы](domains__resources__business.md) — https://help.1forma.ru/domains/resources/business/
+- [Социальная сеть — Администрирование](domains__social-network__admin.md) — https://help.1forma.ru/domains/social-network/admin/
+- [Пространства — Администрирование](domains__spaces__admin.md) — https://help.1forma.ru/domains/spaces/admin/
+- [Мобильное приложение — Администрирование](domains__mobile__admin.md) — https://help.1forma.ru/domains/mobile/admin/
+- [Мобильные шаблоны](domains__mobile__mobile-templates.md) — https://help.1forma.ru/domains/mobile/mobile-templates/
+- [Мобильное приложение](domains__mobile__business.md) — https://help.1forma.ru/domains/mobile/business/
+- [Мобильное приложение — Решение проблем](domains__mobile__support-guide.md) — https://help.1forma.ru/domains/mobile/support-guide/
+- [Поиск — Администрирование](domains__search__admin.md) — https://help.1forma.ru/domains/search/admin/
+- [Поиск](domains__search__business.md) — https://help.1forma.ru/domains/search/business/
+- [Локализация — Администрирование](domains__localization__admin.md) — https://help.1forma.ru/domains/localization/admin/
+- [Лента в шапке — диагностика](domains__user-ui__admin.md) — https://help.1forma.ru/domains/user-ui/admin/
+- [Интеграции — Администрирование](domains__integrations__admin.md) — https://help.1forma.ru/domains/integrations/admin/
+- [Интеграции: бизнес-логика](domains__integrations__business.md) — https://help.1forma.ru/domains/integrations/business/
+- [Импорт и публикации — паттерны](domains__integrations__academy-patterns.md) — https://help.1forma.ru/domains/integrations/academy-patterns/
+- [Обзор интеграции с Exchange](domains__integrations__exchange-integration-overview.md) — https://help.1forma.ru/domains/integrations/exchange-integration-overview/
+- [1С не подключается к 1Ф / ошибка аутентификации](domains__integrations__runbook-1c-connect-auth.md) — https://help.1forma.ru/domains/integrations/runbook-1c-connect-auth/
+- [1С — сопоставление сущностей и метаданных](domains__integrations__1c-entity-mapping.md) — https://help.1forma.ru/domains/integrations/1c-entity-mapping/
+- [Настройка и решение проблем с 1С](domains__integrations__support-guide-1c.md) — https://help.1forma.ru/domains/integrations/support-guide-1c/
+- [Смарт-действия ЭДО: Диадок и СБИС](domains__integrations__edo-smart-actions.md) — https://help.1forma.ru/domains/integrations/edo-smart-actions/
+- [PT Sandbox — интеграция с антивирусной песочницей](domains__integrations__pt-sandbox.md) — https://help.1forma.ru/domains/integrations/pt-sandbox/
+- [КриптоПро УЦ 2.0 — Полная техническая документация](domains__signatures__cryptopro-ca.md) — https://help.1forma.ru/domains/signatures/cryptopro-ca/
+- [Секреты интеграций — хранение и чтение](domains__integrations__secrets.md) — https://help.1forma.ru/domains/integrations/secrets/
+- [Публикации — Администрирование](domains__publications__admin.md) — https://help.1forma.ru/domains/publications/admin/
+  - ОБЯЗАТЕЛЬНО: editorContext с noContextMode: true. Без него -- 500!
+  - → {"data": {"packId": 90160, ...}}
+  - → {"data": {"actionId": "ExecuteSmartScript", "id": 102070, ...}}
+  - → HTTP 204 (пустое тело!)
+  - Шаг 2: Найти ID через gridData
+  - → {"id": 2001, "externalObjectId": "guid", "isActive": false, ...}
+  - Шаг 3: Активировать + установить тип Action + привязать Pack
+  - → HTTP 204
+- [Timeline Events — экранный вид action-публикаций](domains__publications__timeline-events.md) — https://help.1forma.ru/domains/publications/timeline-events/
+- [Системные настройки — Администрирование](domains__system__admin.md) — https://help.1forma.ru/domains/system/admin/
+- [Пользовательские настройки приложения (SettingsCustom)](domains__system__settings-custom.md) — https://help.1forma.ru/domains/system/settings-custom/
+- [Обслуживание БД: очистка таблиц-логов](domains__system__db-housekeeping.md) — https://help.1forma.ru/domains/system/db-housekeeping/
+- [Схемы базы данных: связи таблиц](domains__system__db-er-diagrams.md) — https://help.1forma.ru/domains/system/db-er-diagrams/
+- [Перенос конфигурации между площадками](domains__migration.md) — https://help.1forma.ru/domains/migration/
+- [Контролы формы — Администрирование](domains__form-controls__admin.md) — https://help.1forma.ru/domains/form-controls/admin/
+- [Контролы формы: бизнес-логика](domains__form-controls__business.md) — https://help.1forma.ru/domains/form-controls/business/
+- [Контролы формы — Справочник](domains__form-controls__controls-reference.md) — https://help.1forma.ru/domains/form-controls/controls-reference/
+- [Контролы формы — Матрица совместимости (MTF/NTF)](domains__form-controls__compatibility-matrix.md) — https://help.1forma.ru/domains/form-controls/compatibility-matrix/
+- [Телефония: Администрирование и конфигурация](domains__telephony__admin.md) — https://help.1forma.ru/domains/telephony/admin/
