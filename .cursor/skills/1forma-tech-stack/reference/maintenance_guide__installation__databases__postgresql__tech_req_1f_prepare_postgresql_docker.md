@@ -1,0 +1,381 @@
+# Запуск PostgreSQL 18 в Docker
+
+Источник: https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/tech_req_1f_prepare_postgresql_docker/
+
+
+
+Для работы с приложением "Первая Форма" можно использовать готовый Docker-образ с преднастроенной СУБД PostgreSQL 18:
+ docker.1forma.ru/1f/postgres:18.1-zfs-2
+ В данной инструкции описан процесс развертывания PostgreSQL 18 в Docker.
+
+Перед загрузкой образа получите учётные данные для авторизации в Docker Registry "Первой Формы" и выполните вход:
+ `docker login docker.1forma.ru
+`
+
+Шаг 1: Создание каталога для сервиса
+ Создайте каталог для сервиса (или используйте уже существующий):
+ `sudo mkdir -p /opt/postgres
+cd /opt/postgres
+` Шаг 2: Создание docker-compose.yml
+ Создайте файл docker-compose.yml и добавьте в него следующую конфигурацию:
+ `services:
+
+ db:
+
+   image: docker.1forma.ru/1f/postgres:18.1-zfs-2
+
+   restart: unless-stopped
+
+   container_name: ${PG_CLONE_NAME}
+
+   ulimits:
+
+     nofile:
+
+       soft: 65536
+
+       hard: 65536
+
+   command: >
+
+     postgres
+
+     -p 5432
+
+     -c shared_buffers=1GB
+
+     -c effective_cache_size=3GB
+
+     -c work_mem=16MB
+
+     -c maintenance_work_mem=512MB
+
+     -c random_page_cost=1.1
+
+     -c effective_io_concurrency=200
+
+     -c min_wal_size=1GB
+
+     -c max_wal_size=4GB
+
+     -c lc_messages='en_US.UTF-8'
+
+     -c lc_monetary='en_US.UTF-8'
+
+     -c lc_numeric='en_US.UTF-8'
+
+     -c lc_time='en_US.UTF-8'
+
+     -c default_text_search_config='pg_catalog.russian'
+
+     -c timezone='Europe/Moscow'
+
+     -c jit=off
+
+     -c io_method=io_uring
+
+     -c shared_preload_libraries='pg_stat_statements,pg_hint_plan,pg_qualstats'
+
+   environment:
+
+     POSTGRES_PASSWORD:
+
+     POSTGRES_USER:
+
+     POSTGRES_DB:
+
+     PGPORT:
+
+     TZ:
+
+     DBO_PASS:
+
+     D10TASKUSER_PASS:
+
+     MIGRATIONSDAEMON_PASS:
+
+     REBUS_PASS:
+
+     IMPLEMENTER_PASS:
+
+     D10TASKREADER_PASS:
+
+     PGDATA:
+
+     PG_CLONE_NAME:
+
+     MOUNT_DIR:
+
+     BACKUP_DIR:
+
+   ports:
+
+     - "${PG_PORT}:5432"
+
+   volumes:
+
+     - ${MOUNT_DIR}:${PGDATA}
+
+     - ${BACKUP_DIR}:/backups
+
+     - ${SCRIPT_DIR}:/tmp
+` Примечания:
+
+-  В конфигурации открыт порт 5432 для подключения
+
+
+-  Данные PostgreSQL хранятся в локальном volume (./pgdata), что предотвращает их потерю при перезапуске контейнера
+
+
+-  Настройки сервера выставлять исходя из серверных мощностей
+
+
+-  Параметр security_opt: seccomp:unconfined необходим для работы io_method=io_uring
+
+  Шаг 3: Создание файла .env
+ Создайте файл .env для хранения переменных окружения:
+ `touch .env
+` Заполните его следующими параметрами:
+ `# Общие настройки
+TZ=Europe/Moscow
+PGDATA=/var/lib/postgresql/18/data
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=pass_postgres
+
+# Директории
+MOUNT_DIR=./pgdata/18-main
+BACKUP_DIR=./pgdata/backups
+
+# Пароли пользователей приложения
+DBO_PASS=pass_dbo
+D10TASKUSER_PASS=pass_d10taskuser
+MIGRATIONSDAEMON_PASS=pass_migrationsdaemon
+REBUS_PASS=pass_rebus
+IMPLEMENTER_PASS=pass_implementer
+D10TASKREADER_PASS=pass_d10taskreader
+` Важно: При первом запуске контейнера с пустым каталогом данных автоматически:
+ 1. Активируются необходимые расширения PostgreSQL
+ 2. Создаются пользователи и назначаются пароли из .env
+ Внимание: Инициализационные скрипты выполняются только при запуске контейнера с пустым каталогом данных. Если база уже создана, повторное восстановление не будет выполнено.
+ Внимание: Если при первом запуске контейнер завершился сбоем, но каталог данных уже был инициализирован, PostgreSQL не запустит повторное восстановление. В таком случае удалите каталог данных (pgdata), но убедитесь, что там нет важных данных!
+
+После настройки .env и docker-compose.yml выполните загрузку образа и запуск сервисов:
+ `# Загрузка образа
+docker compose pull
+
+# Запуск сервисов
+docker compose up -d
+
+# Просмотр логов
+docker compose logs -f
+`
+
+База данных d10task создается пустой. Для работы приложения Первая Форма ее необходимо восстановить из дампа.
+ Шаг 1: Получение дампа
+ Запросите актуальный дамп у сотрудников компании "Первая Форма" (техническое сопровождение или отдел DevOps). Скопируйте дамп на сервер.
+ Шаг 2: Размещение дампа
+ Добавьте файл дампа в директорию, которая подключена в /backups через volume:
+ `cp /path/to/d10task.dump ./pgdata/backups/
+` Шаг 3: Создание баз данных
+ Подключитесь к контейнеру:
+ `docker exec -it PG18 /bin/bash
+psql -U postgres -d postgres
+` Создайте базы данных d10task и d10task_file:
+ `CREATE DATABASE d10task
+
+   TEMPLATE template0
+
+   OWNER dbo
+
+   ENCODING 'utf8'
+
+   LC_COLLATE 'ru_RU.utf8'
+
+   LC_CTYPE 'ru_RU.utf8';
+` `CREATE DATABASE d10task_file
+
+   TEMPLATE template0
+
+   OWNER dbo
+
+   ENCODING 'utf8'
+
+   LC_COLLATE 'ru_RU.utf8'
+
+   LC_CTYPE 'ru_RU.utf8';
+` \q
+ Шаг 4: Создание схемы в базе d10task_file
+ psql -U postgres -d d10task_file
+ `CREATE SCHEMA IF NOT EXISTS dbo AUTHORIZATION dbo;
+
+CREATE TABLE dbo.UploadFiles
+(
+
+   id INT NOT NULL GENERATED BY DEFAULT AS IDENTITY,
+
+   FileContent BYTEA,
+
+   Ext VARCHAR,
+
+   UserID INT,
+
+   FileName VARCHAR,
+
+   Compressed BOOL CONSTRAINT DF_UploadFiles_Compressed DEFAULT FALSE,
+
+   CONSTRAINT PK_UploadFiles PRIMARY KEY (id)
+
+);
+` `alter user d10taskuser set search_path = "dbo";
+
+grant select, insert, update, delete, truncate on all tables in schema dbo to d10taskuser;
+
+grant usage, select on all sequences in schema dbo to d10taskuser;
+
+grant execute on all functions in schema dbo to d10taskuser;
+
+alter default privileges in schema dbo grant select, insert, update, delete, truncate on tables to d10taskuser;
+
+alter default privileges in schema dbo grant usage, select on sequences to d10taskuser;
+
+alter default privileges in schema dbo grant execute on functions to d10taskuser;
+
+alter default privileges in schema dbo grant usage on types to d10taskuser;
+
+grant usage on schema dbo to d10taskuser;
+` \q
+ Шаг 5: Активация расширений в базе d10task
+ psql -U postgres -d d10task
+ `-- Загрузка pg_hint_plan
+
+LOAD 'pg_hint_plan';
+
+-- Создание расширений
+
+CREATE EXTENSION IF NOT EXISTS plpgsql SCHEMA pg_catalog;
+
+CREATE EXTENSION IF NOT EXISTS rum SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS pgcrypto SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS pg_buffercache SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS btree_gin SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS pg_trgm SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS pg_qualstats SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS vector SCHEMA public;
+
+CREATE EXTENSION IF NOT EXISTS pg_background SCHEMA public;
+` \q
+ Шаг 6: Восстановление из дампа
+ Выполните restore внутри контейнера:
+ pg_restore -U dbo -d d10task -v /backups/d10task.dump
+ Шаг 7: Создание ролей и назначение прав
+ После успешного восстановления выполните настройку прав.
+ Подключитесь к базе d10task:
+ psql -U postgres -d d10task
+ `alter role D10TaskUser set search_path = "dbo", "public";
+
+alter role dbo set search_path = "dbo", "public";
+
+alter user MigrationsDaemon set search_path = "dbo", "public";
+
+alter user rebus set search_path = "rebus", "public";
+
+grant usage on schema dbo to d10taskuser;
+
+grant dbo, rebus to MigrationsDaemon;
+
+grant all on all tables in schema dbo, sys to dbo, MigrationsDaemon;
+
+grant all on all sequences in schema dbo, sys to dbo, MigrationsDaemon;
+
+grant all on all functions in schema dbo, sys to dbo, MigrationsDaemon;
+
+grant all on schema dbo, sys to dbo, MigrationsDaemon;
+
+alter default privileges in schema dbo, sys, SignalR grant all on tables to dbo, MigrationsDaemon;
+
+alter default privileges in schema dbo, sys, SignalR grant all on sequences to dbo, MigrationsDaemon;
+
+alter default privileges in schema dbo, sys, SignalR grant all on functions to dbo, MigrationsDaemon;
+
+alter default privileges in schema dbo, sys, SignalR grant all on types to dbo, MigrationsDaemon;
+
+grant usage on schema dbo, sys, SignalR to role_D10TaskReader;
+
+grant select on all tables in schema dbo, sys, SignalR to role_D10TaskReader;
+
+grant usage, select on all sequences in schema dbo, sys, SignalR to role_D10TaskReader;
+
+grant execute on all functions in schema dbo, sys, SignalR to role_D10TaskReader;
+
+alter default privileges in schema dbo, sys, SignalR  grant select  on tables to role_D10TaskReader;
+
+alter default privileges in schema dbo, sys, SignalR  grant execute on functions to role_D10TaskReader;
+
+alter default privileges in schema dbo, sys, SignalR  grant usage, select on sequences to role_D10TaskReader;
+
+grant all on all tables in schema custom to role_D10TaskReader;
+
+grant all on all sequences in schema custom to role_D10TaskReader;
+
+grant all on all functions in schema custom to role_D10TaskReader;
+
+alter default privileges in schema custom grant all on tables to role_D10TaskReader;
+
+alter default privileges in schema custom grant all on sequences to role_D10TaskReader;
+
+alter default privileges in schema custom grant all on functions to role_D10TaskReader;
+
+alter default privileges in schema custom grant all on types to role_D10TaskReader;
+
+grant all on schema custom to role_D10TaskReader;
+
+grant all on all tables in schema rebus to role_D10TaskReader;
+
+grant all on all sequences in schema rebus to role_D10TaskReader;
+
+grant all on all functions in schema rebus to role_D10TaskReader;
+
+alter default privileges in schema rebus grant all on tables to role_D10TaskReader;
+
+alter default privileges in schema rebus grant all on sequences to role_D10TaskReader;
+
+alter default privileges in schema rebus grant all on functions to role_D10TaskReader;
+
+alter default privileges in schema rebus grant all on types to role_D10TaskReader;
+
+grant all on schema rebus to role_D10TaskReader;
+
+grant usage on language plpgsql, sql to role_D10TaskReader;
+
+GRANT USAGE ON SCHEMA dbadmin TO d10taskuser;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA dbadmin TO d10taskuser;
+
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA dbadmin TO d10taskuser;
+
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA dbadmin TO d10taskuser;
+
+GRANT EXECUTE ON FUNCTION pg_background_launch(text, int4) TO dbo;
+
+GRANT EXECUTE ON FUNCTION pg_background_result(int4) TO dbo;
+
+GRANT EXECUTE ON FUNCTION pg_background_detach(int4) TO dbo;
+` \q
+
+После завершения настройки выполните проверку:
+ psql -U postgres -d d10task -c "SELECT version();"
+ psql -U postgres -d d10task -c "\dx"
+ psql -U postgres -d d10task -c "SHOW io_method;"
+ Ожидаемые результаты:
+ Версия PostgreSQL 18.x
+ Список установленных расширений:
+ io_method = io_uring
+ Настройка завершена. Сервер PostgreSQL 18 запущен в Docker и готов к работе с приложением "Первая Форма".

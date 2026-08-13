@@ -1,0 +1,80 @@
+# stack — оглавление справочника
+
+Источник: [help.1forma.ru](https://help.1forma.ru/).
+Каждый файл — полный текст страницы из поискового индекса документации.
+
+- [Стек технологий системы](maintenance_guide__installation__tech_stack.md) — https://help.1forma.ru/maintenance_guide/installation/tech_stack/
+- [Установка обязательных программных компонент](maintenance_guide__installation__application__required_software_components.md) — https://help.1forma.ru/maintenance_guide/installation/application/required_software_components/
+- [Настройка и запуск приложения "Первая Форма" в Docker Compose](maintenance_guide__installation__application__docker_compose.md) — https://help.1forma.ru/maintenance_guide/installation/application/docker_compose/
+- [Требования к оборудованию](maintenance_guide__installation__application__iis-deployment__hardware_requirements.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/hardware_requirements/
+- [Развертывание на IIS](maintenance_guide__installation__application__iis-deployment__iis_deploy.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/iis_deploy/
+- [Лицензирование](maintenance_guide__installation__application__iis-deployment__licensing.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/licensing/
+- [Требования для работы мобильных приложений](maintenance_guide__installation__application__iis-deployment__mobile_requirements.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/mobile_requirements/
+- [Служебные пользователи](maintenance_guide__installation__application__iis-deployment__service_users.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/service_users/
+- [Требования к программному обеспечению на сервере](maintenance_guide__installation__application__iis-deployment__software_requirements_server.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/software_requirements_server/
+- [SSL сертификат](maintenance_guide__installation__application__iis-deployment__ssl.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/ssl/
+- [Настройка IIS для использования TCWebService](maintenance_guide__installation__application__iis-deployment__tcwebservice.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/tcwebservice/
+- [Технические требования](maintenance_guide__installation__application__iis-deployment__tech_req_server.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/tech_req_server/
+- [Требования к рабочим местам пользователей](maintenance_guide__installation__application__iis-deployment__workstation_requirements.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/workstation_requirements/
+- [iis-app-pool](maintenance_guide__installation__application__iis-deployment__iis-app-pool__tech_req_1f_prepare_iis.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/iis-app-pool/tech_req_1f_prepare_iis/
+- [Настройка серверов, работающих под управлением NLB](maintenance_guide__installation__application__iis-deployment__iis-app-pool__tech_req_1f_prepare_iis_nlb.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/iis-app-pool/tech_req_1f_prepare_iis_nlb/
+- [Установка "Первой Формы"](maintenance_guide__installation__application__iis-deployment__setup__1forma_install.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/setup/1forma_install/
+- [Открытие портов](maintenance_guide__installation__application__iis-deployment__setup__ports_open.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/setup/ports_open/
+- [Обновление старой версии "Первой Формы"](maintenance_guide__installation__application__iis-deployment__setup__update_legacy.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/setup/update_legacy/
+- [Порядок обновления](maintenance_guide__installation__application__iis-deployment__setup__update_order.md) — https://help.1forma.ru/maintenance_guide/installation/application/iis-deployment/setup/update_order/
+- [Запуск приложения "Первая форма" в Kubernetes](maintenance_guide__installation__application__kubernetes__kubernetes.md) — https://help.1forma.ru/maintenance_guide/installation/application/kubernetes/kubernetes/
+  - применить
+  - обновление
+  - Состояние релиза
+  - Диагностика подов
+  - Сервисы и сетевуха
+  - Проверка HPA
+  - События
+- [Запуск ВКС в Kubernetes](maintenance_guide__installation__application__kubernetes__kubernetes_vks.md) — https://help.1forma.ru/maintenance_guide/installation/application/kubernetes/kubernetes_vks/
+- [Функционирование сервера БД MS SQL Server](maintenance_guide__installation__databases__mssql__1f_performance_db_server_mssql.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/1f_performance_db_server_mssql/
+- [Дополнительные рекомендации](maintenance_guide__installation__databases__mssql__1f_performance_props.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/1f_performance_props/
+- [Обновление приложения "Первая Форма"](maintenance_guide__installation__databases__mssql__1f_update.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/1f_update/
+- [Создание новой таблицы БД в среде Microsoft SQL Server Management Studio](maintenance_guide__installation__databases__mssql__dp_sqlsms.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/dp_sqlsms/
+- [Перенос данных с реальной БД на тестовую](maintenance_guide__installation__databases__mssql__restore_to_test.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/restore_to_test/
+- [Анализ смартов с помощью SQL Profiler](maintenance_guide__installation__databases__mssql__sql_profiler.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/sql_profiler/
+- [Обмен данными на уровне MS SQL](maintenance_guide__installation__databases__mssql__sql_smart.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/sql_smart/
+- [Шифрование строки подключения](maintenance_guide__installation__databases__mssql__tech_req_1f_crypt.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_1f_crypt/
+- [Настройка дистанционного обновления версии приложения](maintenance_guide__installation__databases__mssql__tech_req_1f_install_remoted.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_1f_install_remoted/
+- [Подготовка к установке "Первой Формы"](maintenance_guide__installation__databases__mssql__tech_req_1f_prepare.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_1f_prepare/
+- [Установка и настройка SQL Server 2019](maintenance_guide__installation__databases__mssql__tech_req_1f_prepare_sql.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_1f_prepare_sql/
+- [Установка и настройка SQL Server 2016](maintenance_guide__installation__databases__mssql__tech_req_1f_prepare_sql_2016.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_1f_prepare_sql_2016/
+- [Установка компонентов Windows Server 2019](maintenance_guide__installation__databases__mssql__tech_req_1f_prepare_ws.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_1f_prepare_ws/
+- [Перенос на другой физический сервер](maintenance_guide__installation__databases__mssql__tech_req_move.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_move/
+- [Резервное копирование СУБД MS SQL Server](maintenance_guide__installation__databases__mssql__tech_req_server_backup_mssqlserver.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/tech_req_server_backup_mssqlserver/
+- [stored-procedures](maintenance_guide__installation__databases__mssql__stored-procedures__1f_sql_proc_admin.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/stored-procedures/1f_sql_proc_admin/
+- [Работа с объектами ASSEMBLY и хранимыми процедурами](maintenance_guide__installation__databases__mssql__stored-procedures__1f_sql_proc_admin_assembly.md) — https://help.1forma.ru/maintenance_guide/installation/databases/mssql/stored-procedures/1f_sql_proc_admin_assembly/
+- [Функционирование сервера БД PostgreSQL](maintenance_guide__installation__databases__postgresql__1f_performance_db_server_postgresql.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/1f_performance_db_server_postgresql/
+- [Отказоустойчивый PostgreSQL кластер Patroni](maintenance_guide__installation__databases__postgresql__postgresql_patroni_cluster.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/postgresql_patroni_cluster/
+  - Принудительная компакция до текущей ревизии
+  - Дефрагментация
+  - Снять alarm, если был выставлен по quota
+  - Limits
+  - 3. Перезапуск PostgreSQL
+  - 4. Проверка статуса
+- [Миграция PostgreSQL 16 до PostgreSQL 18](maintenance_guide__installation__databases__postgresql__postgresql-migration-16-to-18.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/postgresql-migration-16-to-18/
+- [Установка и настройка PostgreSQL 18 для приложения "Первая Форма"](maintenance_guide__installation__databases__postgresql__tech_req_1f_prepare_postgrepro.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/tech_req_1f_prepare_postgrepro/
+  - Критично для русского полнотекстового поиска: FTS-индексы в БД "Первой Формы"
+  - строятся через to_tsvector('russian', ...). Без этого параметра websearch_to_tsquery
+  - без явного language идёт по english словарю и не находит русские документы.
+- [Настройка PostgreSQL 18 на Debian-подобных операционных системах](maintenance_guide__installation__databases__postgresql__tech_req_1f_prepare_postgresql.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/tech_req_1f_prepare_postgresql/
+- [Запуск PostgreSQL 18 в Docker](maintenance_guide__installation__databases__postgresql__tech_req_1f_prepare_postgresql_docker.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/tech_req_1f_prepare_postgresql_docker/
+  - Директории
+  - Пароли пользователей приложения
+  - Запуск сервисов
+  - Просмотр логов
+- [Резервное копирование СУБД PostgreSQL](maintenance_guide__installation__databases__postgresql__tech_req_server_backup_postgresql.md) — https://help.1forma.ru/maintenance_guide/installation/databases/postgresql/tech_req_server_backup_postgresql/
+  - Параметры
+  - Создание полного бэкапа
+  - Удаление бэкапов старше 14 дней
+- [1F-Spa (Frontend)](maintenance_guide__system-services__1f-spa.md) — https://help.1forma.ru/maintenance_guide/system-services/1f-spa/
+- [1F-Core (Backend)](maintenance_guide__system-services__1f-core.md) — https://help.1forma.ru/maintenance_guide/system-services/1f-core/
+- [1F-dbDeploy](maintenance_guide__system-services__1f-dbdeploy.md) — https://help.1forma.ru/maintenance_guide/system-services/1f-dbdeploy/
+- [Сервис экспорта PDF](maintenance_guide__system-services__gantt-pdf-converter.md) — https://help.1forma.ru/maintenance_guide/system-services/gantt-pdf-converter/
+- [Сервис импорта Mpp](maintenance_guide__system-services__mpp-importer.md) — https://help.1forma.ru/maintenance_guide/system-services/mpp-importer/
+- [Redis](maintenance_guide__system-services__redis.md) — https://help.1forma.ru/maintenance_guide/system-services/redis/
+- [Настройка Redis (Windows)](maintenance_guide__system-services__redis-setup.md) — https://help.1forma.ru/maintenance_guide/system-services/redis-setup/
